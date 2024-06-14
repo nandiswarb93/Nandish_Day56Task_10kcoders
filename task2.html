@@ -14,7 +14,7 @@
 
 
 
-        data=[
+       var  data=[
         {
           "id": 1,
           "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -274,7 +274,7 @@
 
         img = document.createElement("img")
         img.setAttribute("src",data[i]["image"])
-       temp = data[i]["image"]
+        
         img.style.height = "50%";
         img.style.width="100%";
         img.style.borderRadius="10px";
@@ -294,31 +294,21 @@
         btn.style.width="100px";
         btn.style.borderRadius="20px"
         btn.innerText = "SeeMore";
-        btn.addEventListener("click",loadmore)
+
+        btn.addEventListener("click",()=>{
+          localStorage.setItem("image",data[i]["image"])
+          window.location.assign("./task21.html")
+        });
+
+
         center.appendChild(btn)
         }
-        function loadmore()
-        {
-          window.open(temp)
-        }
+      
         
         
 
 
         console.log(body)
-
-
-        /*
-        btn.addEventListener("click",()=>{
-            window.open(temp)
-
-        });
-        */
-        
-
-    
-        
-
     </script>
 </body>
 </html>
